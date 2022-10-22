@@ -5,7 +5,7 @@ env:
 phases:
   build:
     commands:
-      - aws cloudformation package --template infra.yaml --s3-bucket $TEMPLATE_BUCKET --output-template-file packaged-root-template.yaml
+      - aws cloudformation package --template ./infra.yaml --s3-bucket $TEMPLATE_BUCKET --output-template-file packaged-root-template.yaml
 artifacts:
   files:
     - 'packaged-root-template.yaml'
