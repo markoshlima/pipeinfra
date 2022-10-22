@@ -4,7 +4,7 @@ Parameters:
   StandardQueueName:
     Type: String
     Description: Standard Queue Name
-    Default: vaitomanocu
+    Default: myqueue
 Resources:
  MyStandardQueue: 
     Type: AWS::SQS::Queue
