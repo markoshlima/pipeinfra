@@ -1,13 +1,9 @@
 version: 0.2
-env:
-  variables:
-    TEMPLATE_BUCKET: "output-templates"
 phases:
   build:
     commands:
       - cat infra.yml
-      - aws cloudformation package --template infra.yml --s3-bucket $TEMPLATE_BUCKET --output-template-file packaged-root-template.yaml
-      #- aws cloudformation deploy --template-file /infra.yml --stack-name pipeinfra 
+      - aws cloudformation deploy --template-file infra.yml --stack-name pipeinfra
 artifacts:
   files:
     - 'packaged-root-template.yaml'
