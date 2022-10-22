@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Template to create a sample queue
+Parameters:
+  StandardQueueName:
+    Type: String
+    Description: Standard Queue Name
+    Default: vaitomanocu
+Resources:
+ MyStandardQueue: 
+    Type: AWS::SQS::Queue
+    Properties: 
+      QueueName: !Ref StandardQueueName        
+Outputs:
+  StandardQueueURL:
+    Description: Queue URL for standard queue
+    Value: !Ref MyStandardQueue
+  StandardQueueArn:
+    Description: Queue Arn for Standard queue
+    Value: !GetAtt MyStandardQueue.Arn
